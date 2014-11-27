@@ -1,0 +1,21 @@
+{
+	"name": "nativeshiori",
+	"version": "0.0.1",
+	"description": "Easy interface for NativeShiori subsystem modules",
+	"keywords": ["ukagaka", "shiori"],
+	"main": "nativeshiori.js",
+	"scripts": {
+	},
+	"dependencies": {
+		"encoding-japanese": ">= 1.0.10"
+	},
+	"author": {
+		"name": "narazaka",
+		"url": "http://narazaka.net/"
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Narazaka/nativeshiori.git"
+	}
+}

@@ -1,0 +1,20 @@
+{
+	"name": "nativeshiori",
+	"dependencies": {
+		"encoding-japanese": "polygonplanet/encoding.js#master"
+	},
+	"main": "nativeshiori.js",
+	"ignore": [
+		"**/.*",
+		"bower_components",
+		"node_modules",
+		"npm-debug.log",
+		"coverage",
+		"package.json"
+	],
+	"exportsOverride": {
+		"encoding-japanese": {
+			"js": "encoding.min.js"
+		}
+	}
+}
