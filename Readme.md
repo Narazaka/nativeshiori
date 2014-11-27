@@ -21,12 +21,18 @@ Installation
 
 this requires [encoding-japanese](https://www.npmjs.org/package/encoding-japanese)
 
-    <script src="encoding.min.js"></script>
-    <script src="nativeshiori.js"></script>
+    bower install nativeshiori
 
 or
 
     npm install nativeshiori
+
+or download zip archive
+
+then
+
+    <script src="encoding.min.js"></script>
+    <script src="nativeshiori.js"></script>
 
 Usage
 --------------------------------

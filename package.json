@@ -1,6 +1,6 @@
 {
 	"name": "nativeshiori",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Easy interface for NativeShiori subsystem modules",
 	"keywords": ["ukagaka", "shiori"],
 	"main": "nativeshiori.js",
