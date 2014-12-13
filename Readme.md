@@ -40,16 +40,20 @@ Usage
     var kawarirc_str = 'System.Callback.OnGET: test\r\n';
     var kawarirc = Encoding.convert(Encoding.stringToCode(request), 'SJIS', 'UNICODE');
     var storage = {
-      'kawarirc.kis': new Uint8Array(kawarirc) // filename: ArrayBufferView
+      'kawarirc.kis': new Uint8Array(kawarirc) // filename: ArrayBuffer or Uint8Array
     };
     
-    var nativeshiori = new NativeShiori(new HogeShiori(), storage); // Shiori instance and optional storage (/hoge/ghost/master/*)
+    var nativeshiori = new NativeShiori(new HogeShiori()x); // Shiori instance
     
-    var load_code = nativeshiori.load('/path/to/ghost/master'); // write files in storage to FS then load() if storage exists, else load()
+    nativeshiori.push('/path/to/ghost/master/', storage); // write files in storage to FS (/path/to/ghost/master/*)
+    
+    var load_code = nativeshiori.load('/path/to/ghost/master/'); // load() **CAUTION**: SHIORI/3.0 load() expects path separator (ex. '/') at the end of dirpath
     
     var response = nativeshiori.request('GET SHIORI/3.0\r\nCharset: Shift_JIS\r\nID: OnBoot\r\n\r\n'); // request()
     
     var unload_code = nativeshiori.unload(); // unload()
+    
+    var after_storage = nativeshiori.pull('/path/to/ghost/master/'); // read and unlink files in FS and return them (filename: ArrayBuffer)
 
 LICENSE
 --------------------------------
