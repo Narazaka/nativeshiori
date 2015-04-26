@@ -1,4 +1,4 @@
-/* (C) 2014 Narazaka : Licensed under The MIT License - http://narazaka.net/license/MIT?2014 */
+/* (C) 2015 Narazaka : Licensed under The MIT License - http://narazaka.net/license/MIT?2015 */
 
 if(typeof require !== "undefined" && require !== null){
 	Encoding = require('encoding-japanese');
@@ -29,8 +29,7 @@ NativeShiori.prototype.request = function(request){
 	
 	var res_ptr = this._request(req.ptr, len.ptr);
 	
-	var res_heap = this._view_string(res_ptr, len.heap[0]);
-	var response_raw = Encoding.convert(res_heap, 'UTF8', 'SJIS');
+	var response_raw = this._view_string(res_ptr, len.heap[0]);
 	var response = Encoding.codeToString(Encoding.convert(response_raw, 'UNICODE', this.detect_shiori_charset(Encoding.codeToString(response_raw))));
 	
 	this.Module._free(len.ptr);
@@ -68,16 +67,16 @@ NativeShiori.prototype.detect_shiori_charset = function(str){
 };
 
 NativeShiori.prototype._alloc_string = function(str_array){
-	var buf = new Int8Array(str_array);
+	var buf = new Uint8Array(str_array);
 	var size = buf.length * buf.BYTES_PER_ELEMENT;
 	var ptr = this.Module._malloc(size);
-	var heap = new Int8Array(this.Module.HEAP8.buffer, ptr, size);
+	var heap = new Uint8Array(this.Module.HEAPU8.buffer, ptr, size);
 	heap.set(buf);
 	return {ptr: ptr, size: size, heap: heap};
 };
 
 NativeShiori.prototype._view_string = function(ptr, size){
-	return new Int8Array(this.Module.HEAP8.buffer, ptr, size);
+	return new Uint8Array(this.Module.HEAPU8.buffer, ptr, size);
 };
 
 NativeShiori.prototype._alloc_long = function(n){
