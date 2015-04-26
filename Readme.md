@@ -38,12 +38,12 @@ Usage
 --------------------------------
 
     var kawarirc_str = 'System.Callback.OnGET: test\r\n';
-    var kawarirc = Encoding.convert(Encoding.stringToCode(request), 'SJIS', 'UNICODE');
+    var kawarirc = Encoding.convert(Encoding.stringToCode(kawarirc_str), 'SJIS', 'UNICODE');
     var storage = {
       'kawarirc.kis': new Uint8Array(kawarirc) // filename: ArrayBuffer or Uint8Array
     };
     
-    var nativeshiori = new NativeShiori(new HogeShiori()x); // Shiori instance
+    var nativeshiori = new NativeShiori(new HogeShiori()); // Shiori instance
     
     nativeshiori.push('/path/to/ghost/master/', storage); // write files in storage to FS (/path/to/ghost/master/*)
     
