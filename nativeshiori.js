@@ -1,6 +1,6 @@
 /* (C) 2015 Narazaka : Licensed under The MIT License - http://narazaka.net/license/MIT?2015 */
 
-if(typeof require !== "undefined" && require !== null){
+if(typeof module !== "undefined" && typeof require !== "undefined" && require !== null){
 	Encoding = require('encoding-japanese');
 }
 
