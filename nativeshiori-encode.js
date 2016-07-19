@@ -55,9 +55,11 @@ NativeShioriEncode.prototype.detect_shiori_charset = function(str) {
       case 'Shift_JIS':
         charset = 'SJIS';
         break;
+      default:
+        break;
     }
   }
   return charset;
 };
 
-if ((typeof module !== 'undefined' && module !== null) && (module.exports != null)) module.exports = NativeShioriEncode;
+if (typeof module !== 'undefined' && module !== null && module.exports) module.exports = NativeShioriEncode;

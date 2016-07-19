@@ -78,6 +78,7 @@ NativeShiori.prototype._push_FS = function(base_directory, storage) {
   if (this.debug) console.log('nativeshiori._push_FS()', base_directory, storage);
   var filepath;
   for (filepath in storage) {
+    if (!storage.hasOwnProperty(filepath)) continue;
     var dirname = this._dirname(filepath);
     var dir = this._catfile(base_directory, dirname);
     try {
@@ -181,4 +182,4 @@ NativeShiori.prototype._readdirAll = function(path) { // not contain directory
   return readdir(this._canonical(path), '');
 };
 
-if ((typeof module !== 'undefined' && module !== null) && (module.exports != null)) module.exports = NativeShiori;
+if (typeof module !== 'undefined' && module !== null && module.exports) module.exports = NativeShiori;
