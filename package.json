@@ -11,7 +11,7 @@
     "lint": "eslint *.js"
   },
   "dependencies": {
-    "encoding-japanese": ">= 1.0.10"
+    "encoding-japanese": "^1.0.24"
   },
   "author": {
     "name": "narazaka",

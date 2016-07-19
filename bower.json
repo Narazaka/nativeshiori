@@ -1,7 +1,7 @@
 {
   "name": "nativeshiori",
   "dependencies": {
-    "encoding-japanese": "polygonplanet/encoding.js#master"
+    "encoding-japanese": "^1.0.24"
   },
   "main": "nativeshiori.js",
   "ignore": [
