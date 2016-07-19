@@ -1,6 +1,17 @@
 NativeShiori
 ================================
 
+[![npm](https://img.shields.io/npm/v/nativeshiori.svg)](https://www.npmjs.com/package/nativeshiori)
+[![npm license](https://img.shields.io/npm/l/nativeshiori.svg)](https://www.npmjs.com/package/nativeshiori)
+[![npm download total](https://img.shields.io/npm/dt/nativeshiori.svg)](https://www.npmjs.com/package/nativeshiori)
+[![npm download by month](https://img.shields.io/npm/dm/nativeshiori.svg)](https://www.npmjs.com/package/nativeshiori)
+[![Bower](https://img.shields.io/bower/v/nativeshiori.svg)](https://github.com/Narazaka/nativeshiori)
+[![Bower](https://img.shields.io/bower/l/nativeshiori.svg)](https://github.com/Narazaka/nativeshiori)
+
+[![Dependency Status](https://david-dm.org/Narazaka/nativeshiori.svg)](https://david-dm.org/Narazaka/nativeshiori)
+[![devDependency Status](https://david-dm.org/Narazaka/nativeshiori/dev-status.svg)](https://david-dm.org/Narazaka/nativeshiori#info=devDependencies)
+[![Code Climate](https://codeclimate.com/github/Narazaka/nativeshiori/badges/gpa.svg)](https://codeclimate.com/github/Narazaka/nativeshiori)
+
 What is the NativeShiori?
 --------------------------------
 
