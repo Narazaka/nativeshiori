@@ -1,10 +1,11 @@
 /* (C) 2016 Narazaka : Licensed under The MIT License - http://narazaka.net/license/MIT?2016 */
 
+var Encoding;
 if (typeof module !== 'undefined' && typeof require !== 'undefined' && require !== null) {
   Encoding = require('encoding-japanese');
 }
 
-NativeShioriEncode = function(shiori, debug) {
+var NativeShioriEncode = function(shiori, debug) {
   this.shiori = shiori;
   this.debug = debug;
 };
@@ -45,11 +46,15 @@ NativeShioriEncode.prototype.pull = function(dirpath) {
 
 NativeShioriEncode.prototype.detect_shiori_charset = function(str) {
   var charset = 'AUTO';
-  var result;
-  if (result = str.match(/\r\nCharset: (.+)\r\n/i)) {
+  var result = str.match(/\r\nCharset: (.+)\r\n/i);
+  if (result) {
     switch (result[1]) {
-      case 'UTF-8': charset = 'UTF8'; break;
-      case 'Shift_JIS': charset = 'SJIS'; break;
+      case 'UTF-8':
+        charset = 'UTF8';
+        break;
+      case 'Shift_JIS':
+        charset = 'SJIS';
+        break;
     }
   }
   return charset;

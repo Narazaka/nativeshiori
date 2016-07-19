@@ -1,6 +1,6 @@
 /* (C) 2016 Narazaka : Licensed under The MIT License - http://narazaka.net/license/MIT?2016 */
 
-NativeShiori = function(shiori, debug) {
+var NativeShiori = function(shiori, debug) {
   this.Module = shiori.Module;
   this.FS = shiori.FS;
   this.debug = debug;
@@ -98,7 +98,6 @@ NativeShiori.prototype._pull_FS = function(base_directory) {
   if (this.debug) console.log('nativeshiori._pull_FS()', base_directory);
   var storage = {};
   var elements = this._readdirAll(base_directory);
-  var filepath;
   var i = 0;
   for (i = 0; i < elements.length; ++i) {
     var filepath = elements[i];
@@ -167,7 +166,7 @@ NativeShiori.prototype._readdirAll = function(path) { // not contain directory
     var i = 0;
     for (i = 0; i < children.length; ++i) {
       var child = children[i];
-      if (child == '.' || child == '..') continue;
+      if (child === '.' || child === '..') continue;
       var childpath = _catfile_rel(path, child);
       var childabspath = _catfile(basepath, childpath);
       var stat = FS.stat(childabspath);
@@ -179,8 +178,7 @@ NativeShiori.prototype._readdirAll = function(path) { // not contain directory
     }
     return elements;
   };
-  elements = readdir(this._canonical(path), '');
-  return elements;
+  return readdir(this._canonical(path), '');
 };
 
 if ((typeof module !== 'undefined' && module !== null) && (module.exports != null)) module.exports = NativeShiori;
