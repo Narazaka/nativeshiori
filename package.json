@@ -7,7 +7,9 @@
     "shiori"
   ],
   "main": "nativeshiori.js",
-  "scripts": {},
+  "scripts": {
+    "lint": "eslint *.js"
+  },
   "dependencies": {
     "encoding-japanese": ">= 1.0.10"
   },
