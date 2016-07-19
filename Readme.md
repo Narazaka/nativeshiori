@@ -33,6 +33,7 @@ then
 
     <script src="encoding.min.js"></script>
     <script src="nativeshiori.js"></script>
+    <script src="nativeshiori-encode.js"></script>
 
 Usage
 --------------------------------
@@ -43,7 +44,7 @@ Usage
       'kawarirc.kis': new Uint8Array(kawarirc) // filename: ArrayBuffer or Uint8Array
     };
     
-    var nativeshiori = new NativeShiori(new HogeShiori()); // Shiori instance
+    var nativeshiori = new NativeShioriEncode(new NativeShiori(new HogeShiori())); // Shiori instance (with auto charset convert)
     
     nativeshiori.push('/path/to/ghost/master/', storage); // write files in storage to FS (/path/to/ghost/master/*)
     
