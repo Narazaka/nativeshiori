@@ -2,10 +2,12 @@
   "name": "nativeshiori",
   "version": "1.0.2",
   "description": "Easy interface for NativeShiori subsystem modules",
-  "keywords": ["ukagaka", "shiori"],
+  "keywords": [
+    "ukagaka",
+    "shiori"
+  ],
   "main": "nativeshiori.js",
-  "scripts": {
-  },
+  "scripts": {},
   "dependencies": {
     "encoding-japanese": ">= 1.0.10"
   },
@@ -17,5 +19,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/Narazaka/nativeshiori.git"
+  },
+  "devDependencies": {
+    "eslint": "^3.1.1",
+    "eslint-config-google": "^0.6.0"
   }
 }
