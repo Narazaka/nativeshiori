@@ -6,12 +6,21 @@
   },
   "main": "nativeshiori.js",
   "ignore": [
-    "**/.*",
-    "bower_components",
+    "**/.sw?",
+    "**/.*.sw?",
     "node_modules",
+    "bower_components",
     "npm-debug.log",
-    "coverage",
-    "package.json"
+    "/coverage",
+    "/doc",
+    "/src",
+    "/node",
+    "/.*",
+    "appveyor.yml",
+    "gulpfile.babel.js",
+    "karma.conf.js",
+    "webpack.config.js",
+    "esdoc.json"
   ],
   "exportsOverride": {
     "encoding-japanese": {
