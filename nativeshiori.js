@@ -1,8 +1,4 @@
-/* (C) 2015 Narazaka : Licensed under The MIT License - http://narazaka.net/license/MIT?2015 */
-
-if(typeof module !== "undefined" && typeof require !== "undefined" && require !== null){
-	Encoding = require('encoding-japanese');
-}
+/* (C) 2016 Narazaka : Licensed under The MIT License - http://narazaka.net/license/MIT?2016 */
 
 NativeShiori = function(shiori, debug){
 	this.Module = shiori.Module;
@@ -15,7 +11,8 @@ NativeShiori = function(shiori, debug){
 
 NativeShiori.prototype.load = function(dirpath){
 	if(this.debug) console.log('nativeshiori.load()', dirpath);
-	var dirpath_raw = Encoding.convert(Encoding.stringToCode(dirpath), 'UTF8', 'UNICODE');
+	var dirpath_raw = this.Module.intArrayFromString(dirpath);
+	dirpath_raw.pop(); // remove \0
 	var dir = this._alloc_string(dirpath_raw);
 	
 	return this._load(dir.ptr, dir.size);
@@ -23,14 +20,15 @@ NativeShiori.prototype.load = function(dirpath){
 
 NativeShiori.prototype.request = function(request){
 	if(this.debug) console.log('nativeshiori.request()\n', request);
-	var request_raw = Encoding.convert(Encoding.stringToCode(request), this.detect_shiori_charset(request), 'UNICODE');
+	var request_raw = this.Module.intArrayFromString(request);
+	request_raw.pop(); // remove \0
 	var req = this._alloc_string(request_raw);
 	var len = this._alloc_long(req.size);
 	
 	var res_ptr = this._request(req.ptr, len.ptr);
 	
-	var response_raw = this._view_string(res_ptr, len.heap[0]);
-	var response = Encoding.codeToString(Encoding.convert(response_raw, 'UNICODE', this.detect_shiori_charset(Encoding.codeToString(response_raw))));
+	var res_heap = this._view_string(res_ptr, len.heap[0]);
+	var response = this.Module.intArrayToString(res_heap);
 	
 	this.Module._free(len.ptr);
 	this.Module._free(res_ptr);
@@ -52,18 +50,6 @@ NativeShiori.prototype.push = function(dirpath, storage){
 NativeShiori.prototype.pull = function(dirpath){
 	if(this.debug) console.log('nativeshiori.pull()', dirpath);
 	return this._pull_FS(dirpath);
-};
-
-NativeShiori.prototype.detect_shiori_charset = function(str){
-	var charset = 'AUTO';
-	var result;
-	if(result = str.match(/\r\nCharset: (.+)\r\n/i)){
-		switch(result[1]){
-			case 'UTF-8': charset = 'UTF8'; break;
-			case 'Shift_JIS': charset = 'SJIS'; break;
-		}
-	}
-	return charset;
 };
 
 NativeShiori.prototype._alloc_string = function(str_array){
