@@ -3,6 +3,8 @@
 var NativeShiori = function(shiori, debug) {
   this.Module = shiori.Module;
   this.FS = shiori.FS;
+  this.PATH = shiori.PATH;
+  this.ERRNO_CODES = shiori.ERRNO_CODES;
   this.debug = debug;
   this._load = this.Module.cwrap('load', 'number', ['number', 'number']);
   this._request = this.Module.cwrap('request', 'number', ['number', 'number']);

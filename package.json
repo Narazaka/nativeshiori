@@ -8,7 +8,8 @@
   ],
   "main": "nativeshiori.js",
   "scripts": {
-    "lint": "eslint *.js"
+    "lint": "eslint *.js",
+    "test": "mocha && karma start --single-run"
   },
   "dependencies": {
     "encoding-japanese": "^1.0.24"
@@ -23,7 +24,26 @@
     "url": "https://github.com/Narazaka/nativeshiori.git"
   },
   "devDependencies": {
+    "browserfs": "^0.5.12",
+    "electron-prebuilt": "^1.2.7",
     "eslint": "^3.1.1",
-    "eslint-config-google": "^0.6.0"
+    "eslint-config-google": "^0.6.0",
+    "isparta": "^4.0.0",
+    "karma": "^1.1.0",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-coverage": "^1.0.0",
+    "karma-detect-browsers": "^2.1.0",
+    "karma-electron": "^4.0.0",
+    "karma-espower-preprocessor": "^1.1.0",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-ie-launcher": "^1.0.0",
+    "karma-mocha": "^1.0.1",
+    "karma-mocha-own-reporter": "^1.1.2",
+    "karma-opera-launcher": "^1.0.0",
+    "karma-safari-launcher": "^1.0.0",
+    "kawari.js": "^0.1.1",
+    "mocha": "^2.5.3",
+    "mocha-lazy-bdd": "^0.1.0",
+    "power-assert": "^1.4.1"
   }
 }
