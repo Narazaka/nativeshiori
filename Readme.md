@@ -10,6 +10,8 @@ NativeShiori
 
 [![Dependency Status](https://david-dm.org/Narazaka/nativeshiori.svg)](https://david-dm.org/Narazaka/nativeshiori)
 [![devDependency Status](https://david-dm.org/Narazaka/nativeshiori/dev-status.svg)](https://david-dm.org/Narazaka/nativeshiori#info=devDependencies)
+[![Travis Build Status](https://travis-ci.org/Narazaka/nativeshiori.svg)](https://travis-ci.org/Narazaka/nativeshiori)
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/Narazaka/nativeshiori?svg=true)](https://ci.appveyor.com/project/Narazaka/nativeshiori)
 [![Code Climate](https://codeclimate.com/github/Narazaka/nativeshiori/badges/gpa.svg)](https://codeclimate.com/github/Narazaka/nativeshiori)
 
 What is the NativeShiori?
