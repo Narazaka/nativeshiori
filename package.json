@@ -7,6 +7,9 @@
     "shiori"
   ],
   "main": "nativeshiori.js",
+  "files": [
+    "nativeshiori-encode.js"
+  ],
   "scripts": {
     "lint": "eslint *.js",
     "test": "mocha && karma start --single-run"
