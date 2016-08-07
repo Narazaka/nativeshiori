@@ -5,6 +5,8 @@ var NativeShiori = function(shiori, debug) {
   this.FS = shiori.FS;
   this.PATH = shiori.PATH;
   this.ERRNO_CODES = shiori.ERRNO_CODES;
+  this.NODEFS = shiori.NODEFS;
+  this.IDBFS = shiori.IDBFS;
   this.debug = debug;
   this._load = this.Module.cwrap('load', 'number', ['number', 'number']);
   this._request = this.Module.cwrap('request', 'number', ['number', 'number']);
@@ -42,6 +44,18 @@ NativeShiori.prototype.request = function(request) {
 NativeShiori.prototype.unload = function() {
   if (this.debug) console.log('nativeshiori.unload()');
   return this._unload();
+};
+
+NativeShiori.prototype.mount = function(type, mount_point, root) {
+  if (this.debug) console.log('nativeshiori.mount()', type, mount_point, root);
+  this._mkpath(mount_point);
+  var fs = type === 'IndexedDB' ? this.IDBFS : this.NODEFS;
+  this.FS.mount(fs, {root: root}, mount_point);
+};
+
+NativeShiori.prototype.umount = function(mount_point) {
+  if (this.debug) console.log('nativeshiori.umount()', mount_point);
+  this.FS.umount(mount_point);
 };
 
 NativeShiori.prototype.push = function(dirpath, storage) {
