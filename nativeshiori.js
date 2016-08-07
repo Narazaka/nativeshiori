@@ -55,7 +55,7 @@ NativeShiori.prototype.mount = function(type, mount_point, root) {
 
 NativeShiori.prototype.umount = function(mount_point) {
   if (this.debug) console.log('nativeshiori.umount()', mount_point);
-  this.FS.umount(mount_point);
+  this.FS.unmount(mount_point); // unmount! not umount!
 };
 
 NativeShiori.prototype.push = function(dirpath, storage) {
