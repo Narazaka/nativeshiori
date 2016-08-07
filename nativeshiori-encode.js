@@ -34,6 +34,16 @@ NativeShioriEncode.prototype.unload = function() {
   return this.shiori.unload();
 };
 
+NativeShioriEncode.prototype.mount = function(type, mount_point, root) {
+  if (this.debug) console.log('nativeshiori-encode.mount()', type, mount_point, root);
+  this.shiori.mount(type, mount_point, root);
+};
+
+NativeShioriEncode.prototype.umount = function(mount_point) {
+  if (this.debug) console.log('nativeshiori-encode.umount()', mount_point);
+  this.shiori.umount(mount_point);
+};
+
 NativeShioriEncode.prototype.push = function(dirpath, storage) {
   if (this.debug) console.log('nativeshiori-encode.push()', dirpath, storage);
   this.shiori.push(dirpath, storage);
