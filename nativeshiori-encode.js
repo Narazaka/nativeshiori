@@ -19,9 +19,9 @@ NativeShioriEncode.prototype.load = function(dirpath) {
 
 NativeShioriEncode.prototype.request = function(request) {
   if (this.debug) console.log('nativeshiori-encode.request()\n', request);
-  var request_enc = Encoding.codeToString(Encoding.convert(Encoding.stringToCode(request), this.detect_shiori_charset(request), 'UNICODE'));
+  var request_enc = Encoding.convert(Encoding.stringToCode(request), this.detect_shiori_charset(request), 'UNICODE');
 
-  var response_enc = this.shiori.request(request_enc);
+  var response_enc = this.shiori.request(request_enc, true);
 
   var response = Encoding.codeToString(Encoding.convert(Encoding.stringToCode(response_enc), 'UNICODE', this.detect_shiori_charset(response_enc)));
 

@@ -22,10 +22,15 @@ NativeShiori.prototype.load = function(dirpath) {
   return this._load(dir.ptr, dir.size);
 };
 
-NativeShiori.prototype.request = function(request) {
+NativeShiori.prototype.request = function(request, raw_request) {
   if (this.debug) console.log('nativeshiori.request()\n', request);
-  var request_raw = this.Module.intArrayFromString(request);
-  request_raw.pop(); // remove \0
+  var request_raw;
+  if (raw_request) {
+    request_raw = request;
+  } else {
+    request_raw = this.Module.intArrayFromString(request);
+    request_raw.pop(); // remove \0
+  }
   var req = this._alloc_string(request_raw);
   var len = this._alloc_long(req.size);
 
