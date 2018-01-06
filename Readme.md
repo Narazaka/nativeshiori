@@ -1,6 +1,8 @@
 NativeShiori
 ================================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Narazaka/nativeshiori.svg)](https://greenkeeper.io/)
+
 [![npm](https://img.shields.io/npm/v/nativeshiori.svg)](https://www.npmjs.com/package/nativeshiori)
 [![npm license](https://img.shields.io/npm/l/nativeshiori.svg)](https://www.npmjs.com/package/nativeshiori)
 [![npm download total](https://img.shields.io/npm/dt/nativeshiori.svg)](https://www.npmjs.com/package/nativeshiori)
