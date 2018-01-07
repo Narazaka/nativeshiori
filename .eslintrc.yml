@@ -1,4 +1,8 @@
 extends: google
 rules:
-  camelcase:
-    - off
+  camelcase: [off]
+  no-var: [off]
+  max-len:
+    - error
+    - {code: 120}
+  prefer-rest-params: [off]

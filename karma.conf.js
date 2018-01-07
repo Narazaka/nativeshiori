@@ -1,5 +1,3 @@
-var path = require('path');
-
 module.exports = function(config) {
   config.set({
     basePath: '',
@@ -50,22 +48,24 @@ module.exports = function(config) {
     reporters: ['mocha-own', 'coverage'],
     detectBrowsers: {
       postDetection: function(availableBrowsers) {
-        const result = availableBrowsers;
+        var result = availableBrowsers;
         if (process.env.TRAVIS) {
-          const chrome_index = availableBrowsers.indexOf('Chrome');
+          var chrome_index = availableBrowsers.indexOf('Chrome');
           if (chrome_index >= 0) {
             result.splice(chrome_index, 1);
             result.push('Chrome_travis_ci');
           }
         }
-        const phantom_index = availableBrowsers.indexOf('PhantomJS');
+        var phantom_index = availableBrowsers.indexOf('PhantomJS');
         if (phantom_index >= 0) result.splice(phantom_index, 1);
         result.push('Electron');
         return result;
       },
     },
     espowerPreprocessor: {
-      transformPath: function(path) { return path.replace(/\.js/, '.espowered.js'); },
+      transformPath: function(path) {
+        return path.replace(/\.js/, '.espowered.js');
+      },
     },
     customLaunchers: {
       Chrome_travis_ci: {

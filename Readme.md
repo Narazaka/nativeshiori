@@ -8,11 +8,13 @@ NativeShiori
 [![Bower](https://img.shields.io/bower/v/nativeshiori.svg)](https://github.com/Narazaka/nativeshiori)
 [![Bower](https://img.shields.io/bower/l/nativeshiori.svg)](https://github.com/Narazaka/nativeshiori)
 
-[![Dependency Status](https://david-dm.org/Narazaka/nativeshiori.svg)](https://david-dm.org/Narazaka/nativeshiori)
-[![devDependency Status](https://david-dm.org/Narazaka/nativeshiori/dev-status.svg)](https://david-dm.org/Narazaka/nativeshiori#info=devDependencies)
-[![Travis Build Status](https://travis-ci.org/Narazaka/nativeshiori.svg)](https://travis-ci.org/Narazaka/nativeshiori)
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/Narazaka/nativeshiori?svg=true)](https://ci.appveyor.com/project/Narazaka/nativeshiori)
+[![Dependency Status](https://david-dm.org/Narazaka/nativeshiori/status.svg)](https://david-dm.org/Narazaka/nativeshiori)
+[![devDependency Status](https://david-dm.org/Narazaka/nativeshiori/dev-status.svg)](https://david-dm.org/Narazaka/nativeshiori?type=dev)
+[![Travis Build Status](https://travis-ci.org/Narazaka/nativeshiori.svg?branch=master)](https://travis-ci.org/Narazaka/nativeshiori)
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/Narazaka/nativeshiori?svg=true&branch=master)](https://ci.appveyor.com/project/Narazaka/nativeshiori)
 [![Code Climate](https://codeclimate.com/github/Narazaka/nativeshiori/badges/gpa.svg)](https://codeclimate.com/github/Narazaka/nativeshiori)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f93742b08d2c4f39854914bafcedad28)](https://www.codacy.com/app/narazaka/nativeshiori?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Narazaka/nativeshiori&amp;utm_campaign=Badge_Grade)
+[![Greenkeeper badge](https://badges.greenkeeper.io/Narazaka/nativeshiori.svg)](https://greenkeeper.io/)
 
 What is the NativeShiori?
 --------------------------------
@@ -56,17 +58,17 @@ Usage
     var storage = {
       'kawarirc.kis': new Uint8Array(kawarirc) // filename: ArrayBuffer or Uint8Array
     };
-    
+
     var nativeshiori = new NativeShioriEncode(new NativeShiori(new HogeShiori())); // Shiori instance (with auto charset convert)
-    
+
     nativeshiori.push('/path/to/ghost/master/', storage); // write files in storage to FS (/path/to/ghost/master/*)
-    
+
     var load_code = nativeshiori.load('/path/to/ghost/master/'); // load() **CAUTION**: SHIORI/3.0 load() expects path separator (ex. '/') at the end of dirpath
-    
+
     var response = nativeshiori.request('GET SHIORI/3.0\r\nCharset: Shift_JIS\r\nID: OnBoot\r\n\r\n'); // request()
-    
+
     var unload_code = nativeshiori.unload(); // unload()
-    
+
     var after_storage = nativeshiori.pull('/path/to/ghost/master/'); // read and unlink files in FS and return them (filename: ArrayBuffer)
 
 LICENSE
