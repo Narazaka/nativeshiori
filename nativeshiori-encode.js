@@ -23,7 +23,8 @@ NativeShioriEncode.prototype.request = function(request) {
 
   var response_enc = this.shiori.request(request_enc, true);
 
-  var response = Encoding.codeToString(Encoding.convert(Encoding.stringToCode(response_enc), 'UNICODE', this.detect_shiori_charset(response_enc)));
+  var response = Encoding.codeToString(
+    Encoding.convert(Encoding.stringToCode(response_enc), 'UNICODE', this.detect_shiori_charset(response_enc)));
 
   if (this.debug) console.log('nativeshiori-encode.request() returns\n', response);
   return response;
