@@ -15,7 +15,7 @@
     "test": "mocha && karma start --single-run"
   },
   "dependencies": {
-    "encoding-japanese": "^1.0.24"
+    "encoding-japanese": "^1.0.26"
   },
   "author": {
     "name": "narazaka",
@@ -29,24 +29,25 @@
   "devDependencies": {
     "browserfs": "^1.4.3",
     "electron": "^1.8.2",
-    "eslint": "^4.14.0",
+    "eslint": "^4.15.0",
     "eslint-config-google": "^0.9.1",
     "isparta": "^4.0.0",
     "karma": "^2.0.0",
     "karma-chrome-launcher": "^2.2.0",
-    "karma-coverage": "^1.0.0",
-    "karma-detect-browsers": "^2.1.0",
+    "karma-coverage": "^1.1.1",
+    "karma-detect-browsers": "^2.2.6",
+    "karma-edge-launcher": "^0.4.2",
     "karma-electron": "^5.2.2",
-    "karma-espower-preprocessor": "^1.1.0",
-    "karma-firefox-launcher": "^1.0.0",
+    "karma-espower-preprocessor": "^1.1.1",
+    "karma-firefox-launcher": "^1.1.0",
     "karma-ie-launcher": "^1.0.0",
-    "karma-mocha": "^1.0.1",
+    "karma-mocha": "^1.3.0",
     "karma-mocha-own-reporter": "^1.1.2",
     "karma-opera-launcher": "^1.0.0",
     "karma-safari-launcher": "^1.0.0",
     "kawari.js": "^0.2.0",
     "mocha": "^5.0.0",
     "mocha-lazy-bdd": "^0.1.0",
-    "power-assert": "^1.4.1"
+    "power-assert": "^1.4.4"
   }
 }
