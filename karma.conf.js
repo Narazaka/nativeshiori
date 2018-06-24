@@ -48,17 +48,14 @@ module.exports = function(config) {
     },
     reporters: ['mocha-own', 'coverage'],
     detectBrowsers: {
+      usePhantomJS: false,
       postDetection: function(availableBrowsers) {
         var result = availableBrowsers;
-        if (process.env.TRAVIS) {
-          var chrome_index = availableBrowsers.indexOf('Chrome');
-          if (chrome_index >= 0) {
-            result.splice(chrome_index, 1);
-            result.push('Chrome_travis_ci');
-          }
+        var chromeIndex = availableBrowsers.indexOf('Chrome');
+        if (chromeIndex >= 0) {
+          result.splice(chromeIndex, 1);
+          result.push('ChromeHeadless');
         }
-        var phantom_index = availableBrowsers.indexOf('PhantomJS');
-        if (phantom_index >= 0) result.splice(phantom_index, 1);
         result.push('Electron');
         return result;
       },
@@ -66,12 +63,6 @@ module.exports = function(config) {
     espowerPreprocessor: {
       transformPath: function(path) {
         return path.replace(/\.js/, '.espowered.js');
-      },
-    },
-    customLaunchers: {
-      Chrome_travis_ci: {
-        base: 'Chrome',
-        flags: ['--no-sandbox'],
       },
     },
     port: 9876,
