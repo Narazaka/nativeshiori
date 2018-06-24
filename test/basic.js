@@ -1,5 +1,5 @@
-var NaviveShiori;
-var NaviveShioriEncode;
+var NaviveShiori; // eslint-disable-line no-unused-vars
+var NaviveShioriEncode; // eslint-disable-line no-unused-vars
 var Kawari;
 var BrowserFS;
 var assert;
@@ -13,13 +13,19 @@ if (typeof module !== 'undefined' && module !== null && module.exports) {
 
 describe('NativeShiori', function() {
   var lazy = {
-    shiori: function() { return new Kawari(); },
-    nativeshiori: function() { return new NativeShiori(lazy.shiori()); },
-    nativeshiori_encode: function() { return new NativeShioriEncode(lazy.nativeshiori()); },
+    shiori: function() {
+      return new Kawari();
+    },
+    nativeshiori: function() {
+      return new NativeShiori(lazy.shiori());
+    },
+    nativeshiori_encode: function() {
+      return new NativeShioriEncode(lazy.nativeshiori());
+    },
     fs: function() {
       var fsBase = new BrowserFS.FileSystem.InMemory();
       BrowserFS.initialize(fsBase);
-      var fs = BrowserFS.BFSRequire('fs');
+      var fs = BrowserFS.BFSRequire('fs'); // eslint-disable-line new-cap
       return fs;
     },
   };
@@ -38,11 +44,15 @@ describe('NativeShiori', function() {
   });
 
   context('Shiori', function() {
-    it('initialized', function() { assert(lazy.shiori() instanceof Kawari) });
+    it('initialized', function() {
+      assert(lazy.shiori() instanceof Kawari);
+    });
   });
 
   context('NativeShiori', function() {
-    it('initialized', function() { assert(lazy.nativeshiori() instanceof NativeShiori) });
+    it('initialized', function() {
+      assert(lazy.nativeshiori() instanceof NativeShiori);
+    });
     it('can work', function() {
       assert(nativeshiori.load('/ghosts/test-ghost/') === 1);
       assert(/Value: OnBoot/.test(nativeshiori.request('GET SHIORI/3.0\r\nSender: SSP\r\nID: OnBoot\r\n\r\n')));

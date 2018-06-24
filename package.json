@@ -11,7 +11,7 @@
     "nativeshiori-encode.js"
   ],
   "scripts": {
-    "lint": "eslint *.js",
+    "lint": "eslint *.js test/*.js",
     "test": "mocha && karma start --single-run"
   },
   "dependencies": {
