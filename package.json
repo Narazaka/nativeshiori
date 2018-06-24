@@ -47,7 +47,6 @@
     "karma-safari-launcher": "^1.0.0",
     "kawari.js": "^0.2.0",
     "mocha": "^5.0.0",
-    "mocha-lazy-bdd": "^0.1.0",
     "power-assert": "^1.4.4"
   }
 }

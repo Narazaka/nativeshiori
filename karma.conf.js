@@ -17,11 +17,9 @@ module.exports = function(config) {
       'karma-espower-preprocessor',
     ],
     files: [
-      require.resolve('mocha-lazy-bdd/dist/mocha-lazy-bdd'),
       require.resolve('power-assert/build/power-assert'),
       require.resolve('kawari.js/kawari.js'),
       require.resolve('browserfs/dist/browserfs'),
-      'mock/mocha-lazy-bdd.js',
       'nativeshiori.js',
       'nativeshiori-encode.js',
       'test/**/*.js',
