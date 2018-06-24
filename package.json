@@ -11,6 +11,7 @@
     "nativeshiori-encode.js"
   ],
   "scripts": {
+    "prepublishOnly": "npm run lint && npm test",
     "lint": "eslint *.js test/*.js",
     "test": "mocha && karma start --single-run"
   },
