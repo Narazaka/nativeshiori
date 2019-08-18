@@ -30,7 +30,7 @@
   "devDependencies": {
     "browserfs": "^1.4.3",
     "electron": "^2.0.3",
-    "eslint": "^5.0.0",
+    "eslint": "^6.2.0",
     "eslint-config-google": "^0.9.1",
     "isparta": "^4.0.0",
     "karma": "^3.0.0",
